@@ -43,14 +43,6 @@ Rook.prototype.isValidPosition = function(newPosition) {
     return false;
 };
 
-Rook.prototype.kill = function(targetPiece) {
-    if (targetPiece.color !== this.color) {
-        Piece.prototype.kill.call(this, targetPiece); 
-    } else {
-        console.warn("Cannot capture own piece");
-    }
-};
-
 Rook.prototype.moveTo = function(targetPosition) {
     if (this.isValidPosition(targetPosition)) {
         let piece = this.board.getPieceAt(targetPosition);
