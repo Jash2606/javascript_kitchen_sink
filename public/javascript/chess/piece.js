@@ -55,6 +55,10 @@ Piece.prototype.kill = function(targetPiece){
             pieces[pieceType].splice(index, 1);
         }
     }
+
+    if (targetPiece.type === 'king') {
+        targetPiece.board.showWinningMessage();
+    }
     
     this.removePiece(targetPiece);
 }

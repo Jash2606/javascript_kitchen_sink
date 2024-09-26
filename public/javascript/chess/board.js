@@ -217,3 +217,14 @@ Board.prototype.switchTurn = function(){
     this.currentTurn = this.currentTurn === 'white' ? 'black' : 'white';
     this.selectedPiece = false;
 }
+
+
+Board.prototype.showWinningMessage = function() {
+
+    const wonElement = document.getElementById('won');
+    wonElement.textContent = this.currentTurn + " wins!";
+    
+    setTimeout(() => {
+        window.location.reload();
+    }, 3000);
+};
